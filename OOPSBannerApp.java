@@ -2,8 +2,10 @@ class Banner {
 
     void displayBanner() {
 
-        String border = String.join("", "*","*","*","*","*","*","*","*","*","*",
-                                         "*","*","*","*","*","*","*","*","*","*","*","*","*","*");
+        String border = String.join("", 
+                "*","*","*","*","*","*","*","*","*","*",
+                "*","*","*","*","*","*","*","*","*","*",
+                "*","*","*","*");
 
         String emptyLine = String.join("", "*",
                 "                      ",
@@ -13,11 +15,19 @@ class Banner {
                 "        OOPS          ",
                 "*");
 
-        System.out.println(border);
-        System.out.println(emptyLine);
-        System.out.println(textLine);
-        System.out.println(emptyLine);
-        System.out.println(border);
+        // UC4: Store all lines inside an array
+        String[] bannerLines = {
+                border,
+                emptyLine,
+                textLine,
+                emptyLine,
+                border
+        };
+
+        // UC4: Loop through array and print
+        for (String line : bannerLines) {
+            System.out.println(line);
+        }
     }
 }
 
