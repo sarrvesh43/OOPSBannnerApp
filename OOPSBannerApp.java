@@ -1,54 +1,28 @@
 class Banner {
 
-    // Static method for O
-    static String[] getO() {
-        return new String[]{
-                " ***** ",
-                "*     *",
-                "*     *",
-                "*     *",
-                "*     *",
-                "*     *",
-                " ***** "
+    void displayBanner() {
+
+        // UC5: Declare + initialize array in one step using String.join()
+        String[] bannerLines = {
+
+                String.join("", "*","*","*","*","*","*","*","*","*","*",
+                                   "*","*","*","*","*","*","*","*","*","*",
+                                   "*","*","*","*"),
+
+                String.join("", "*", "                      ", "*"),
+
+                String.join("", "*", "        OOPS          ", "*"),
+
+                String.join("", "*", "                      ", "*"),
+
+                String.join("", "*","*","*","*","*","*","*","*","*","*",
+                                   "*","*","*","*","*","*","*","*","*","*",
+                                   "*","*","*","*")
         };
-    }
 
-    // Static method for P
-    static String[] getP() {
-        return new String[]{
-                " ***** ",
-                "*     *",
-                "*     *",
-                " ***** ",
-                "*      ",
-                "*      ",
-                "*      "
-        };
-    }
-
-    // Static method for S
-    static String[] getS() {
-        return new String[]{
-                " ***** ",
-                "*      ",
-                "*      ",
-                " ***** ",
-                "      *",
-                "      *",
-                " ***** "
-        };
-    }
-
-    // Display full OOPS banner
-    static void displayBanner() {
-
-        String[] O = getO();
-        String[] P = getP();
-        String[] S = getS();
-
-        // Loop through rows
-        for (int i = 0; i < O.length; i++) {
-            System.out.println(O[i] + "  " + O[i] + "  " + P[i] + "  " + S[i]);
+        // Loop to print
+        for (String line : bannerLines) {
+            System.out.println(line);
         }
     }
 }
@@ -56,6 +30,9 @@ class Banner {
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
-        Banner.displayBanner();
+
+        Banner banner = new Banner();
+        banner.displayBanner();
+
     }
 }
